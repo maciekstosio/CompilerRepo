@@ -8,6 +8,7 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -80,6 +81,13 @@ function App(): React.JSX.Element {
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
           </Section>
+          <Button
+            title="Broken breakpoint"
+            onPress={() => {
+              const a = 'Test Error';
+              throw new Error(a);
+            }}
+          />
           <Section title="See Your Changes">
             <ReloadInstructions />
           </Section>
